@@ -1,14 +1,14 @@
 # views/user_view.py
 from fastapi import APIRouter, Body, HTTPException
 from fastapi.encoders import jsonable_encoder
-from controllers.user_controller import (
+from backend.controllers.user_controller import (
     add_user,
     retrieve_users,
     retrieve_user,
     update_user,
     delete_user
 )
-from models.user import UserSchema, UpdateUserModel
+from backend.models.user import UserSchema, UpdateUserModel
 
 router = APIRouter()
 

@@ -9,3 +9,5 @@ client = AsyncIOMotorClient(MONGO_DETAILS)
 # Conectar a la base de datos 'proyectoweb'
 database = client.proyectoweb
 user_collection = database.get_collection("users")
+
+

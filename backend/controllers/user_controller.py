@@ -1,7 +1,7 @@
 # controllers/user_controller.py
 from bson import ObjectId
-from models.user import user_helper
-from database import user_collection
+from backend.models.user import user_helper
+from backend.database import user_collection
 
 # Crear un nuevo usuario
 async def add_user(user_data: dict) -> dict:

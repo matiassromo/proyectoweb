@@ -1,8 +1,10 @@
-# main.py
 from fastapi import FastAPI
-from views.user_view import router as UserRouter
+from fastapi.staticfiles import StaticFiles
+from backend.views.user_view import router as UserRouter
 
 app = FastAPI()
+
+# Servir la carpeta 'static' en la ruta '/'
 
 app.include_router(UserRouter, tags=["Users"], prefix="/api")
 
