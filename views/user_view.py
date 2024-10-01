@@ -6,7 +6,7 @@ from controllers.user_controller import (
     retrieve_users,
     retrieve_user,
     update_user,
-    delete_user,
+    delete_user
 )
 from models.user import UserSchema, UpdateUserModel
 
