@@ -24,6 +24,7 @@ async def retrieve_user(id: str):
     return None
 
 # Actualizar usuario
+# Actualizar usuario
 async def update_user(id: str, data: dict):
     if len(data) < 1:
         return False
@@ -35,6 +36,7 @@ async def update_user(id: str, data: dict):
         if updated_user:
             return True
     return False
+
 
 # Eliminar usuario
 async def delete_user(id: str):
