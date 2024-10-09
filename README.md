@@ -1,10 +1,10 @@
 # User Management System with Login and CRUD Operations
 
-This project is a web application that implements a user authentication system (Login) and user management (CRUD) functionality, following the MVC (Model-View-Controller) design pattern. The frontend is built using **Vue.js** and the backend is developed with **Python**. 
+This project is a web application that implements a user authentication system (Login) and user management (CRUD) functionality, following the MVC (Model-View-Controller) design pattern. The frontend is built using **Vue.js** and the backend is developed with **Python**. The application uses **MongoDB** for data storage and is containerized with **Docker**.
 
 ## Features
 
-- **Login System**: Authenticates users with hardcoded credentials for now (`admin@gmail.com`, `admin123`).
+- **Login System**: Authenticates users with hardcoded credentials for now (admin@gmail.com, admin123).
 - **User CRUD Operations**: Allows admins to create, read, update, and delete users.
 - **Authentication Protection**: Users cannot access the CRUD section without logging in. If an unauthenticated user attempts to access the `/users` route, they will be redirected to the login page.
 - **Session Management**: Uses `localStorage` to store authentication state.
@@ -19,6 +19,8 @@ This project is a web application that implements a user authentication system (
 ### Backend
 - **Python**: Backend server is implemented in Python.
 - **FastAPI**: Used for managing the API and user data.
+- **MongoDB**: The user data is stored in MongoDB for persistence.
+- **Docker**: The entire application is containerized using Docker for easy deployment and environment consistency.
 
 ### Styling
 - **Custom CSS**: For a modern and dark theme UI.
@@ -27,7 +29,7 @@ This project is a web application that implements a user authentication system (
 
 The project follows the MVC architecture pattern:
 
-1. **Model**: Represents the user data managed by the backend.
+1. **Model**: Represents the user data stored in MongoDB, managed by the backend.
 2. **View**: Handled by Vue.js components to render the login and user management interface.
 3. **Controller**: Contains the logic for routing between login and CRUD functionalities, and handles the session state.
 
@@ -62,10 +64,12 @@ The project follows the MVC architecture pattern:
     pip install -r requirements.txt
     ```
 
-3. Start the FastAPI server:
+3. Start the FastAPI server using Docker:
     ```bash
-    uvicorn main:app --reload
+    docker-compose up
     ```
+
+    This will start the backend along with MongoDB in a Docker container.
 
 ## Usage
 
@@ -84,10 +88,6 @@ The project follows the MVC architecture pattern:
 
 ## Future Enhancements
 
-- **Database Integration**: Replace hardcoded credentials and user management with a persistent database.
+- **Full Database Integration**: Replace hardcoded credentials with real users stored in MongoDB.
 - **API Authentication**: Implement JWT for secure authentication and session management.
 - **Role-Based Access**: Introduce roles (e.g., admin, user) for managing permissions.
-
-## License
-
-This project doesn't have license
