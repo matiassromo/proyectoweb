@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+  //root: 'frontend', // Asegúrate de que esto apunte a la carpeta correcta
   plugins: [vue()],
   server: {
     proxy: {
