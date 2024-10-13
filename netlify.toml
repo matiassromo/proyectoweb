@@ -1,9 +1,3 @@
 [build]
-  publish = "frontend/dist"  # Asegúrate de que esta ruta coincida con la carpeta de salida de tu build
-  command = "npm run build"   # Comando para construir tu aplicación
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = true
+  publish = "frontend/dist"
+  command = "npm run build"
