@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@vue/cli-service": "^5.0.8",
+    "vue": "^3.2.47",     
     "sweetalert2": "^11.14.1",
     "vue-router": "^4.4.5"
   }
