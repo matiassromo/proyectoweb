@@ -1,14 +1,16 @@
+import os
+import uvicorn
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
-from backend.views.user_view import router as user_router  # Importa las rutas de user_view
+from backend.views.user_view import router as user_router
 
 app = FastAPI()
 
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Puedes ajustar los orígenes si es necesario
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,5 +34,9 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 async def read_users_me(token: str = Depends(oauth2_scheme)):
     return {"user": "me"}
 
-# Incluye las rutas para los usuarios desde `user_view.py`
+# Incluye las rutas para los usuarios
 app.include_router(user_router, prefix="/api")
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
