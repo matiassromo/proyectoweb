@@ -3,12 +3,6 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   plugins: [vue()],
-  // Eliminar la línea root si causa problemas al ejecutar en modo dev
-  // root: 'frontend', 
-  build: {
-    outDir: 'dist', // Este es el directorio donde se generará el build
-    emptyOutDir: true // Esto asegurará que se vacíe la carpeta antes de construir
-  },
   server: {
     proxy: {
       '/api': {
