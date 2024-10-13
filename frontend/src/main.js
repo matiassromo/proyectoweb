@@ -1,5 +1,16 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router/router';  // Asegúrate que la ruta sea correcta
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-createApp(App).use(router).mount('#app');
+export default defineConfig({
+  root: 'frontend', // Cambia 'frontend' si tu index.html está en otro directorio
+  plugins: [vue()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'proyectoweb-bmeqh6ftezb4cwh2.canadacentral-01.azurewebsites.net',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
+})
