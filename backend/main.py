@@ -10,7 +10,7 @@ app = FastAPI()
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://proyectoweb-bmeqh6ftezb4cwh2.canadacentral-01.azurewebsites.net"],  # Puedes poner "*" durante pruebas
+    allow_origins=["*"],  # Puedes poner "*" durante pruebas
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
