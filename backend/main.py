@@ -11,9 +11,10 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_origins=["https://proyectoweb-bmeqh6ftezb4cwh2.canadacentral-01.azurewebsites.nets"]
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"], 
 )
 
 # Login token
