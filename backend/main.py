@@ -13,7 +13,7 @@ app.add_middleware(
     allow_origins=["https://proyectoweb-bmeqh6ftezb4cwh2.canadacentral-01.azurewebsites.net"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"], 
+    allow_headers=["*"],
 )
 
 # Login token
