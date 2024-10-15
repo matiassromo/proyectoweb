@@ -10,7 +10,7 @@ app = FastAPI()
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://proyectoweb-bmeqh6ftezb4cwh2.canadacentral-01.azurewebsites.net"],
+    allow_origins=["https://proyectoweb-bmeqh6ftezb4cwh2.canadacentral-01.azurewebsites.net"],  # Puedes poner "*" durante pruebas
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,5 +38,5 @@ async def read_users_me(token: str = Depends(oauth2_scheme)):
 app.include_router(user_router, prefix="/api")
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", 8000))  # Puerto que Azure asigna automáticamente
     uvicorn.run(app, host="0.0.0.0", port=port)
